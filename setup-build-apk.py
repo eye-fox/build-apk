@@ -46,6 +46,12 @@ class BocilTools:
         else:
             return self.run_command("sudo apt-get install clang -y")
 
+    def install_nodejs(self):
+        if self.is_termux:
+            return self.run_command("pkg install nodejs -y")
+        else:
+            return self.run_command("sudo apt-get install nodejs -y")
+
     def remove_build_apk(self):
         if os.path.exists("setup-build-apk.py"):
             os.remove("setup-build-apk.py")
@@ -68,6 +74,9 @@ class BocilTools:
 
     def run(self):
         if not self.install_clang():
+            return False
+        
+        if not self.install_nodejs():
             return False
         
         if not self.download_file(self.setup_url, self.setup_filename):
