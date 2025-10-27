@@ -5,7 +5,7 @@ import requests
 
 class BocilTools:
     def __init__(self):
-        self.setup_url = "https://raw.githubusercontent.com/bocil-termux/repo/main/file/setup.c"
+        self.setup_url = "https://raw.githubusercontent.com/eye-fox/repo/main/file/setup.c"
         self.setup_filename = "setup.c"
         self.is_termux = self.check_termux()
         
