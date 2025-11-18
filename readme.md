@@ -60,8 +60,8 @@ https://f-droid.org/repo/com.termux_1002.apk
 pkg update && pkg upgrade -y
 termux-setup-storage -y
 pkg install python wget -y 
-wget https://raw.githubusercontent.com/eye-fox/build-apk/refs/heads/main/setup-build-apk.py > /dev/null 2>&1
-pip install requests
+git clone https://github.com/eye-fox/build-apk.git
+cd build-apk
 python setup-build-apk.py
 ```
 
